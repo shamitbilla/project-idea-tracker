@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "curie",
+    "slug": "curie",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/myIcon.png",
+    "scheme": "curie",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.shamitbilla.curie"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5c6e9c0e-67b0-43cf-9c00-9b403d92dfb5"
+      },
+      "EXPO_PUBLIC_SUPABASE_URL": "https://akofzoljrfwcflxtubjz.supabase.co",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrb2Z6b2xqcmZ3Y2ZseHR1Ymp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMTA2ODYsImV4cCI6MjA2MzU4NjY4Nn0.lOq2jzlSGkD76zHpJbOHYHnJoYCAGoKNJtXy_Ti-6Xc"
+    },
+    "owner": "shamitbilla"
+  }
+}
