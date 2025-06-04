@@ -6,12 +6,14 @@ import * as React from 'react';
 import { useState } from "react";
 import { View } from "react-native";
 import { Text } from "react-native-paper";
+import { useRouter } from "expo-router";
 
 
 export default function Index() {
   const [dialogVisible, setDialogVisible] = React.useState(false);
   const [projectCount, setProjectCount] = useState<number>(69);
   const [trigger, setTrigger] = useState<Boolean>(false);
+  const router = useRouter();
 
   React.useEffect(() => {
      const getCuriosity = async () => {
@@ -68,7 +70,11 @@ export default function Index() {
       </Text>
       <CuriosityCard trigger={trigger} onTrigger={() => { setTrigger(prev => !prev) }}></CuriosityCard>
       <MyButton icon='plus' onPress={() => setDialogVisible(true)}>Add new Project</MyButton>
-      <Text style={{ color: '#808080', padding: 10 }}>{ projectCount } more projects in queue</Text>
+      <Text style={{ color: '#808080', padding: 10 }}>{projectCount} more projects in queue</Text>
+      <View style={{paddingTop : 60}}>
+        <MyButton icon='lightbulb-on-outline' onPress={() => router.push("/ideas")} backgroundColor="#FAF9F6" textColor="black">Give me ideas</MyButton>
+      </View>
+      
       <AddCuriosityCard visible={dialogVisible} onDismiss={() => setDialogVisible(false)} onTrigger={()=>{setTrigger(prev => !prev)}} />
       
     </View>

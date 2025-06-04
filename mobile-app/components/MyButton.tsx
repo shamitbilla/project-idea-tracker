@@ -3,30 +3,42 @@ import { View } from 'react-native';
 import { Button, Text } from 'react-native-paper';
 
 interface MyButtonProps {
-    children: React.ReactNode;
-    height?: number;
-    width?: number;
-    icon : 'plus' | ''
-    onPress?: () => void;
+  children: React.ReactNode;
+  height?: number;
+  width?: number;
+  icon: 'plus' | '' | 'lightbulb-on-outline';
+  onPress?: () => void;
+  backgroundColor?: string; // New prop
+  textColor?: string;       // New prop
 }
 
-const MyButton: React.FC<MyButtonProps> = ({ children, height, width, onPress, icon = 'plus' }) => (
-    <View style={{padding: 5}}>
-        <Button
-                style={{
-                    backgroundColor: 'black',
-                    height: height, // Set a specific height
-                    width: width,  // Set the same width to make it square
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                borderRadius: 12,
-                    
-                }}
-                icon={icon} mode="contained" onPress={onPress} textColor='white'>
-            <Text style={{color:'#FFFFFF'}}>{ children }</Text>
-        </Button>
-    </View>
-   
+const MyButton: React.FC<MyButtonProps> = ({
+  children,
+  height,
+  width,
+  onPress,
+  icon,
+  backgroundColor = 'black',  // default
+  textColor = '#FFFFFF'       // default
+}) => (
+  <View style={{ padding: 5 }}>
+    <Button
+      style={{
+        backgroundColor,
+        height,
+        width,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 12,
+      }}
+      icon={icon}
+      mode="contained"
+      onPress={onPress}
+      textColor={textColor} // Paper's textColor prop
+    >
+      <Text style={{ color: textColor }}>{children}</Text>
+    </Button>
+  </View>
 );
 
 export default MyButton;
